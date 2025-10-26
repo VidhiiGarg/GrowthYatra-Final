@@ -1,8 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [displayText, setDisplayText] = useState("");
+  const [textIndex, setTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const texts = ["Growth Journey", "Growth Yatra"];
+  
+  useEffect(() => {
+    const currentText = texts[textIndex];
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (displayText.length < currentText.length) {
+          setDisplayText(currentText.slice(0, displayText.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        if (displayText.length > 0) {
+          setDisplayText(currentText.slice(0, displayText.length - 1));
+        } else {
+          setIsDeleting(false);
+          setTextIndex((textIndex + 1) % texts.length);
+        }
+      }
+    }, isDeleting ? 50 : 150);
+    
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, textIndex]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image with Overlay */}
@@ -17,8 +45,9 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           <h1 className="font-poppins font-bold text-5xl md:text-7xl mb-6 text-white">
             Begin Your
-            <span className="block bg-gradient-accent bg-clip-text text-transparent">
-              Growth Journey
+            <span className="block bg-gradient-accent bg-clip-text text-transparent min-h-[1.2em]">
+              {displayText}
+              <span className="animate-pulse">|</span>
             </span>
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto font-medium">

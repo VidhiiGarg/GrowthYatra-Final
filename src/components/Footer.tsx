@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -17,21 +18,21 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-foreground">Services</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li className="hover:text-primary transition-colors cursor-pointer">SEO Optimization</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">Website Development</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">Email Marketing</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">Google Ads</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">Social Media Marketing</li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">SEO Optimization</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Website Development</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Email Marketing</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Google Ads</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Social Media Marketing</Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-semibold mb-4 text-foreground">Company</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li className="hover:text-primary transition-colors cursor-pointer">About Us</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">Our Work</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">Case Studies</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">Careers</li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/portfolio" className="hover:text-primary transition-colors">Our Work</Link></li>
+              <li><Link to="/portfolio" className="hover:text-primary transition-colors">Case Studies</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors">Careers</Link></li>
             </ul>
           </div>
           
