@@ -18,9 +18,10 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-foreground">Services</h4>
             <ul className="space-y-2 text-muted-foreground">
               <li className="hover:text-primary transition-colors cursor-pointer">SEO Optimization</li>
+              <li className="hover:text-primary transition-colors cursor-pointer">Website Development</li>
+              <li className="hover:text-primary transition-colors cursor-pointer">Email Marketing</li>
+              <li className="hover:text-primary transition-colors cursor-pointer">Google Ads</li>
               <li className="hover:text-primary transition-colors cursor-pointer">Social Media Marketing</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">PPC Advertising</li>
-              <li className="hover:text-primary transition-colors cursor-pointer">Content Strategy</li>
             </ul>
           </div>
           

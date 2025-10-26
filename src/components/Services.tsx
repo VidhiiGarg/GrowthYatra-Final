@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Search, Share2, Target, PenTool } from "lucide-react";
+import { Search, Globe, Mail, MousePointerClick, Share2 } from "lucide-react";
 
 const services = [
   {
@@ -9,22 +9,28 @@ const services = [
     color: "from-primary to-secondary"
   },
   {
-    icon: Share2,
-    title: "Social Media Marketing",
-    description: "Engage your audience and build brand loyalty across all major social media platforms.",
+    icon: Globe,
+    title: "Website Development",
+    description: "Create stunning, responsive websites that convert visitors into customers with modern design.",
     color: "from-secondary to-accent"
   },
   {
-    icon: Target,
-    title: "PPC Advertising",
-    description: "Drive targeted traffic and maximize conversions with data-driven paid advertising campaigns.",
+    icon: Mail,
+    title: "Email Marketing",
+    description: "Engage your audience with targeted email campaigns that drive conversions and loyalty.",
     color: "from-accent to-primary"
   },
   {
-    icon: PenTool,
-    title: "Content Strategy",
-    description: "Create compelling content that resonates with your audience and drives meaningful engagement.",
+    icon: MousePointerClick,
+    title: "Google Ads",
+    description: "Maximize ROI with expertly managed Google Ads campaigns targeting the right audience.",
     color: "from-primary to-accent"
+  },
+  {
+    icon: Share2,
+    title: "Social Media Marketing",
+    description: "Build your brand presence across all major social platforms with strategic content.",
+    color: "from-secondary to-primary"
   }
 ];
 
@@ -41,8 +47,8 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
             <Card 
               key={service.title}
               className="group hover:shadow-elegant transition-all duration-300 border-border/50 hover:border-primary/50 animate-fade-in-up bg-card"
