@@ -24,9 +24,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <img 
-              src={logo} 
-              alt="GrowthYatra Logo" 
+            <img
+              src={logo}
+              alt="GrowthYatra Logo"
               className="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
             />
             <span className="font-poppins font-bold text-xl bg-gradient-primary bg-clip-text text-transparent">
@@ -52,9 +52,13 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
-            <Button variant="default" size="default" className="shadow-md">
-              Get Started
-            </Button>
+
+            {/* ✅ Linked Get Started Button (Desktop) */}
+            <Link to="/contact">
+              <Button variant="default" size="default" className="shadow-md">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,9 +89,13 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button variant="default" size="default" className="w-full">
-                Get Started
-              </Button>
+
+              {/* ✅ Linked Get Started Button (Mobile) */}
+              <Link to="/contact" onClick={() => setIsOpen(false)}>
+                <Button variant="default" size="default" className="w-full">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </div>
         )}

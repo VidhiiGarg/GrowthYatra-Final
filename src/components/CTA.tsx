@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
+import{ useNavigate } from "react-router-dom";
 
 const CTA = () => {
+  const navigate= useNavigate();
   return (
     <section className="py-20 px-4 bg-gradient-primary relative overflow-hidden">
       {/* Animated background elements */}
@@ -22,6 +24,7 @@ const CTA = () => {
               variant="hero" 
               size="lg"
               className="group bg-white text-primary hover:bg-white/90 shadow-glow"
+              onClick={()=> navigate("/Contact")}
             >
               <Mail className="mr-2 h-5 w-5" />
               Get Free Consultation
